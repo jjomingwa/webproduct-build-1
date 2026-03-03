@@ -1,0 +1,19 @@
+# Cloudflare Wrangler 설정 파일
+# 이 파일을 통해 R2 버킷과 Worker를 연결하고 환경 변수를 관리합니다.
+
+name = "r2-supabase-sync-worker"
+main = "src/index.ts"
+compatibility_date = "2026-03-03"
+
+# [R2 버킷 바인딩]
+# worker 코드 내에서 'MY_R2_BUCKET'이라는 이름으로 접근할 수 있게 합니다.
+[[r2_buckets]]
+binding = "MY_R2_BUCKET"
+bucket_name = "your-r2-bucket-name" # 실제 생성한 R2 버킷 이름으로 변경하세요.
+
+# [환경 변수 설정]
+# Supabase와 연결하기 위한 핵심 정보들입니다.
+[vars]
+SUPABASE_URL = "https://your-project-id.supabase.co"
+SUPABASE_ANON_KEY = "your-anon-key-here"
+R2_PUBLIC_DOMAIN = "https://pub-xxxxxx.r2.dev" # R2 퍼블릭 도메인 URL (설정한 경우)
