@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "supabase-db": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://[본인의SupabaseDB주소]"]
+    },
+    "r2-storage": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./public/assets"]
+    }
+  }
+}
